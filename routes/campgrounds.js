@@ -3,15 +3,30 @@ var router=express.Router();
 var Campground=require("../models/campground");
 var middlewareObj=require("../middleware")
 
-router.get("/", function(req, res){
-    // Get all campgrounds from DB
-    Campground.find({}, function(err, allCampgrounds){
-       if(err){
-           console.log(err);
-       } else {
-          res.render("campgrounds/index",{campgrounds: allCampgrounds, page: 'campgrounds'});
-       }
+const escapeRegex = text => text.replace(/[-[\]{}()*+?.,\\^$|#\s]/g, "\\$&");
+
+router.get("/", (req, res) => {
+  let noMatch = null;
+  if (req.query.search) {
+    const regex = new RegExp(escapeRegex(req.query.search), 'gi');
+    Campground.find({name: regex}, function(err, allCampgrounds) {
+      if (err) { console.log(err); }
+      else {
+        if (allCampgrounds.length < 1) {
+          noMatch = "No campgrounds found, please try again.";
+        }
+        res.render("campgrounds/index", { campgrounds: allCampgrounds, page: "campgrounds", noMatch: noMatch });  
+      }
     });
+  } else {
+    // Get all camgrounds from DB
+    Campground.find({}, function(err, allCampgrounds) {
+      if (err) { console.log(err); }
+      else {
+        res.render("campgrounds/index", { campgrounds: allCampgrounds, page: "campgrounds", noMatch: noMatch });  
+      }
+    }); 
+  }
 });
 
 router.post("/",middlewareObj.isLoggedIn, function(req, res){

@@ -1,5 +1,5 @@
 <% include ../partials/header %>
-     <header class="jumbotron">
+     <!-- <header class="jumbotron">
          <div class="container">
              <h1>Welcome To PG-Mate!</h1>
              <p>View our hand-picked rooms from all over the country</p>
@@ -7,7 +7,23 @@
                 <a class="btn btn-primary btn-large" href="/rooms/new">Add Your Rooms With Us</a>
              </p>
          </div>
-     </header>
+     </header> -->
+	<header class="jumbotron">
+		<h1><span class="glyphicon glyphicon-home align-bottom" aria-hidden="true"></span> Welcome to PG-Mate!</h1>
+		<p>View our hand-picked rooms around the country</p>
+		<form class="form-inline" action="/rooms" method="GET">
+		  <div class="form-group has-feedback">
+			<label for="search"></label>
+			<input class="form-control" type="text" name="search" placeholder="Search Rooms" autocomplete="off" />
+			<span class="glyphicon glyphicon-search form-control-feedback" aria-hidden="true"></span>
+		  </div>
+		</form>
+		<hr>
+		<a class="pull-right" href="/rooms/new">
+		  <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+		  Share New Room
+		</a>
+	  </header>
      
      <div class="row text-center" style="display:flex; flex-wrap: wrap;">
         <% campgrounds.forEach(function(campground){ %>
