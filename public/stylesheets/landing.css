@@ -19,7 +19,7 @@ nav,ul {
 a {
 	text-decoration: none;
 	opacity: 0.75;
-	color: #fff;
+	color: #000000;
 }
 
 a:hover {
@@ -60,7 +60,7 @@ header {
 	padding: 35px 100px 0;
 	animation: 1s fadein 0.5s forwards;
 	opacity: 0;
-	color: #fff;
+	color: #000000;
 }
 @media (max-width: 800px){
 	header{
@@ -98,19 +98,9 @@ header nav li {
 	justify-content: center;
 	text-align: center;
 	min-height: 100vh;
-	color: #fff;
+	color: #000000;
 }
 
-/*.hero .background-image {*/
-/*	position: absolute;*/
-/*	top: 0;*/
-/*	left: 0;*/
-/*	width: 100%;*/
-/*	height: 100%;*/
-/*	background-size: cover;*/
-/*	z-index: -1;*/
-/*	background-color: #80a3db;*/
-/*}*/
 
 .hero h1 {
 	font: bold 60px "Open Sans", sans-serif;
@@ -332,22 +322,22 @@ footer p{
   animation: imageAnimation 50s linear infinite; 
 }
 .slideshow li:nth-child(1) { 
-  background-image: url(http://i.imgur.com/K3mPv14.jpg) 
+  background-image: url(https://images.unsplash.com/flagged/photo-1556438758-8d49568ce18e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=753&q=80) 
 }
 .slideshow li:nth-child(2) { 
-  background-image: url(http://i.imgur.com/SBEmFpv.jpg);
+  background-image: url(https://images.unsplash.com/photo-1549638441-b787d2e11f14?ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80);
   animation-delay: 10s; 
 }
 .slideshow li:nth-child(3) { 
-  background-image: url(http://i.imgur.com/emvhOnb.jpg);
+  background-image: url(https://images.unsplash.com/photo-1576675762999-2d8ee979aac4?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=752&q=80);
   animation-delay: 20s; 
 }
 .slideshow li:nth-child(4) { 
-  background-image: url(http://i.imgur.com/2LSMCmJ.jpg);
+  background-image: url(https://images.unsplash.com/photo-1587874522487-fe10e954d035?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80);
   animation-delay: 30s; 
 }
 .slideshow li:nth-child(5) { 
-  background-image: url(http://i.imgur.com/TVGe0Ef.jpg);
+  background-image: url(https://images.unsplash.com/photo-1547473078-cbab237054c0?ixlib=rb-1.2.1&auto=format&fit=crop&w=889&q=80);
   animation-delay: 40s; 
 }
 @keyframes imageAnimation { 

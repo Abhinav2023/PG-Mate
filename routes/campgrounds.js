@@ -4,11 +4,12 @@ var Campground=require("../models/campground");
 var middlewareObj=require("../middleware")
 
 router.get("/", function(req, res){
+    // Get all campgrounds from DB
     Campground.find({}, function(err, allCampgrounds){
        if(err){
            console.log(err);
        } else {
-          res.render("rooms/index",{campgrounds: allCampgrounds, page: 'campgrounds'});
+          res.render("campgrounds/index",{campgrounds: allCampgrounds, page: 'campgrounds'});
        }
     });
 });
@@ -30,31 +31,31 @@ router.post("/",middlewareObj.isLoggedIn, function(req, res){
             console.log(err);
         }
         else{
-            req.flash("success","Campground Successfully Added")
+            req.flash("success","Room Successfully Added")
             res.redirect("/rooms");
         }
     })
 });
 
 router.get("/new",middlewareObj.isLoggedIn, function(req, res){
-   res.render("rooms/new"); 
+   res.render("campgrounds/new"); 
 });
 
 router.get("/:id",function(req,res){
     Campground.findById(req.params.id).populate("comments").exec(function(err, foundCampground){
         if(err || !foundCampground){
-            req.flash("error","Campground not found")
+            req.flash("error","Room not found")
             res.redirect("back")
         }
         else{
-            res.render("rooms/show",{campground: foundCampground});
+            res.render("campgrounds/show",{campground: foundCampground});
         }
     })
 })
 
 router.get("/:id/edit",middlewareObj.campgroundLoggedIn,function(req,res){
     Campground.findById(req.params.id,function(err,foundCampground){
-        res.render("rooms/edit",{campground:foundCampground});
+        res.render("campgrounds/edit",{campground:foundCampground});
     })
 })
 
@@ -63,8 +64,8 @@ router.put("/:id",middlewareObj.campgroundLoggedIn,function(req,res){
         if(err){
             console.log(err)
         }else{
-            req.flash("success","Camground Successfully Updated")
-            res.redirect("/campgrounds/" + req.params.id)
+            req.flash("success","Room Successfully Updated")
+            res.redirect("/rooms/" + req.params.id)
         }
     })
 })
@@ -72,10 +73,10 @@ router.put("/:id",middlewareObj.campgroundLoggedIn,function(req,res){
 router.delete("/:id/",middlewareObj.campgroundLoggedIn,function(req,res){
     Campground.findByIdAndDelete(req.params.id,function(err){
         if(err){
-            res.redirect("/campgrounds")
+            res.redirect("/rooms")
         }else{
-            req.flash("success","Campground Successfully Deleted")
-            res.redirect("/campgrounds")
+            req.flash("success","Room Successfully Deleted")
+            res.redirect("/rooms")
         }
     })
 })

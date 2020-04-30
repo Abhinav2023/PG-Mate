@@ -22,6 +22,7 @@ router.post("/register",function(req,res){
         firstName:req.body.firstName,
         lastName: req.body.lastName,
         email: req.body.email,
+		phoneNo: req.body.phoneNo,
         avatar: req.body.avatar
     });
     User.register(newUser,req.body.password,function(err,user){
@@ -31,7 +32,7 @@ router.post("/register",function(req,res){
         }
         passport.authenticate("local")(req,res,function(){
             req.flash("success","Successfully Signed In As" + user.username)
-            res.redirect("/campgrounds");
+            res.redirect("/rooms");
         })
     })
 })
@@ -43,7 +44,7 @@ router.get("/login", function(req, res){
    res.render("login", {page: 'login'}); 
 });
 router.post("/login",passport.authenticate("local",{
-    successRedirect:"/campgrounds",
+    successRedirect:"/rooms",
     failureRedirect:"/login"
     }),function(req,res){
 });
@@ -51,7 +52,7 @@ router.post("/login",passport.authenticate("local",{
 router.get("/logout",function(req,res){
     req.logout();
     req.flash("success","Successfully Logged You Out")
-    res.redirect("/campgrounds")
+    res.redirect("/rooms")
 })
 
 router.get("/users/:id",function(req,res){
@@ -182,7 +183,7 @@ router.post('/reset/:token', function(req, res) {
       });
     }
   ], function(err) {
-    res.redirect('/campgrounds');
+    res.redirect('/rooms');
   });
 });
 

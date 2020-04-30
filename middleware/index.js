@@ -7,7 +7,7 @@ middlewareObj.campgroundLoggedIn=function (req,res,next){
     if(req.isAuthenticated()){
         Campground.findById(req.params.id,function(err,foundCampground){
         if(err || !foundCampground){
-            req.flash("error","Campground Not Found")
+            req.flash("error","Room Not Found")
             res.redirect("back")
         }
         else{

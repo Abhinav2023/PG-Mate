@@ -48,5 +48,5 @@ app.use("/rooms",campgroundRoutes);
 app.use("/rooms/:id/comments",commentRoutes)
 
 app.listen(3000, process.env.IP, function(){
-   console.log("The YelpCamp Server Has Started!");
+   console.log("The PG-Mate Server Has Started!");
 });
