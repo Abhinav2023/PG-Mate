@@ -1,0 +1,15 @@
+.thumbnail img{
+    width: 100%;
+}
+.thumbnail{
+    padding: 0;
+}
+.thumbnail .caption-pull{
+    margin: 9px;
+}
+.fuck{
+    margin-left: 15px
+}
+#delete{
+    display:inline;
+}
