@@ -14,7 +14,7 @@ var express          = require("express"),
     commentRoutes    = require("./routes/comments"),
     flash            = require("connect-flash")
     
-var url=process.env.DBURL;
+var url="mongodb+srv://Abhinav2023:yogasan@1234@cluster0-5hjnv.mongodb.net/test?retryWrites=true&w=majority";
 mongoose.connect(url,{ useNewUrlParser: true });
 
 app.use(bodyParser.urlencoded({extended: true}));
@@ -47,6 +47,6 @@ app.use("/",indexRoutes);
 app.use("/rooms",roomRoutes);
 app.use("/rooms/:id/comments",commentRoutes)
 
-app.listen(process.env.PORT, process.env.IP, function(){
+app.listen(3000, process.env.IP, function(){
    console.log("The PG-Mate Server Has Started!");
 });
