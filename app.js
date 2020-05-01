@@ -14,7 +14,7 @@ var express          = require("express"),
     commentRoutes    = require("./routes/comments"),
     flash            = require("connect-flash")
     
-var url="mongodb+srv://Abhinav2023:yogasan@1234@cluster0-5hjnv.mongodb.net/test?retryWrites=true&w=majority";
+var url=process.env.DBURL;
 mongoose.connect(url,{ useNewUrlParser: true });
 
 app.use(bodyParser.urlencoded({extended: true}));
