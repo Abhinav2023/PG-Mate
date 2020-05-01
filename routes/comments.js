@@ -1,21 +1,21 @@
 var express=require("express");
 var router=express.Router({mergeParams: true});
-var Campground=require("../models/campground");
+var Room=require("../models/room");
 var Comment=require("../models/comments")
 var middlewareObj=require("../middleware")
 
 router.get("/new", middlewareObj.isLoggedIn,function(req,res){
-    Campground.findById(req.params.id, function(err,campground){
+    Room.findById(req.params.id, function(err,room){
         if(err){
             req.flash("error","Comment Not Find")
             console.log(err)
         }else{
-          res.render("comments/new",{campground: campground})  
+          res.render("comments/new",{room: room})  
         }
     })
 })
 router.post("/", middlewareObj.isLoggedIn,function(req,res){
-    Campground.findById(req.params.id, function(err, campground){
+    Room.findById(req.params.id, function(err, room){
         if(err){
             console.log(err)
         }else{
@@ -26,10 +26,10 @@ router.post("/", middlewareObj.isLoggedIn,function(req,res){
                     comment.author.id=req.user._id;
                     comment.author.username=req.user.username;
                     comment.save();
-                    campground.comments.push(comment);
-                    campground.save();
+                    room.comments.push(comment);
+                    room.save();
                     req.flash("success","Successfully Added Comment")
-                    res.redirect("/rooms/" + campground._id)
+                    res.redirect("/rooms/" + room._id)
                 }
             })
         }
@@ -37,13 +37,13 @@ router.post("/", middlewareObj.isLoggedIn,function(req,res){
 })
 
 router.get("/:idd/edit", middlewareObj.commentLoggedIn,function(req,res){
-    Campground.findById(req.params.id, function(err,foundCampground){
-        if(err || !foundCampground){
+    Room.findById(req.params.id, function(err,foundRoom){
+        if(err || !foundRoom){
             req.flash("error","Room Not found")
             res.redirect("back")
         }else{
             Comment.findById(req.params.idd,function(err,comment){
-                res.render("comments/edit",{campground: req.params.id,comment:comment})
+                res.render("comments/edit",{room: req.params.id,comment:comment})
             })
         }
     })

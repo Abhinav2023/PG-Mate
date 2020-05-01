@@ -7,14 +7,14 @@ var express          = require("express"),
     Comment          = require("./models/comments"),
     User             = require("./models/user"),
     methodOverride   = require("method-override"),
-    Campground       = require("./models/campground"),
+    Room       = require("./models/room"),
     seedDB           = require("./seeds"),
     indexRoutes      = require("./routes/index"),
-    campgroundRoutes = require("./routes/campgrounds"),
+    roomRoutes = require("./routes/rooms"),
     commentRoutes    = require("./routes/comments"),
     flash            = require("connect-flash")
     
-var url="mongodb+srv://Abhinav:bansal@cluster0-urbmq.mongodb.net/test?retryWrites=true&w=majority"
+var url="mongodb+srv://Abhinav2023:yogasan@1234@cluster0-5hjnv.mongodb.net/test?retryWrites=true&w=majority"
 mongoose.connect(url,{ useNewUrlParser: true });
 
 app.use(bodyParser.urlencoded({extended: true}));
@@ -44,7 +44,7 @@ app.use(function(req,res,next){
 })
 
 app.use("/",indexRoutes);
-app.use("/rooms",campgroundRoutes);
+app.use("/rooms",roomRoutes);
 app.use("/rooms/:id/comments",commentRoutes)
 
 app.listen(3000, process.env.IP, function(){

@@ -1,17 +1,17 @@
-var Campground=require("../models/campground")
+var Room=require("../models/room")
 var Comment=require("../models/comments")
 
 var middlewareObj={};
 
-middlewareObj.campgroundLoggedIn=function (req,res,next){
+middlewareObj.roomLoggedIn=function (req,res,next){
     if(req.isAuthenticated()){
-        Campground.findById(req.params.id,function(err,foundCampground){
-        if(err || !foundCampground){
+        Room.findById(req.params.id,function(err,foundRoom){
+        if(err || !foundRoom){
             req.flash("error","Room Not Found")
             res.redirect("back")
         }
         else{
-            if(foundCampground.author.id.equals(req.user._id)){
+            if(foundRoom.author.id.equals(req.user._id)){
                 next()
             }
             else{

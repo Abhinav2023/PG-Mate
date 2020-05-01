@@ -2,7 +2,7 @@ var express=require("express");
 var router=express.Router();
 var User=require("../models/user");
 var passport=require("passport")
-var Campground = require("../models/campground");
+var Room = require("../models/room");
 var async = require("async");
 var nodemailer = require("nodemailer");
 var crypto = require("crypto");
@@ -61,12 +61,12 @@ router.get("/users/:id",function(req,res){
             req.flash("error","Something Went Wrong")
             return res.redirect("/")
         }
-        Campground.find().where('author.id').equals(foundUser.id).exec(function(err,campgrounds){
+        Room.find().where('author.id').equals(foundUser.id).exec(function(err,rooms){
             if(err){
                 req.flash("error","Something Went Wrong")
                 return res.redirect("/")
             }
-            res.render("users/show",{user: foundUser, campgrounds: campgrounds})
+            res.render("users/show",{user: foundUser, rooms: rooms})
         })
     })
 })

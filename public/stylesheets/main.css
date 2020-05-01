@@ -13,3 +13,149 @@
 #delete{
     display:inline;
 }
+
+
+@import url("https://fonts.googleapis.com/css?family=Lato|Open+Sans|Source+Sans+Pro&display=swap");
+
+:root {
+  --black: #222222;
+  --blue: #1c5d99;
+  --green: #639fab;
+  --periwinkle: #bbcde5;
+}
+
+body {
+  background-color: var(--periwinkle);
+  height: 100vh;
+  margin: 0;
+  display: grid;
+  place-items: center;
+}
+
+.container2 {
+  width: 1000px;
+  height: 600px;
+  background-color: var(--green);
+  border-radius: 0px 30px 30px 0px;
+  box-shadow: 0px 0px 30px -9px var(--blue);
+}
+
+.profilecontent1 {
+  background-color: white;
+  width: 400px;
+  height: 600px;
+  margin-top: 20px;
+  border-radius: 20px;
+  box-shadow: 0px 0px 30px -9px var(--blue);
+  text-align: center;
+}
+
+.profilepic {
+  background-image: url(https://cdn.pixabay.com/photo/2016/03/09/09/31/woman-1245840_1280.jpg);
+  background-size: cover;
+  background-position: center;
+  width: 400px;
+  height: 400px;
+  border-radius: 20px 20px 0px 0px;
+}
+
+#Profileheading {
+  margin-top: 0;
+  font-family: Lato;
+  font-size: 15pt;
+  color: var(--black);
+  font-weight: normal;
+}
+
+.profilecontent1 h4 {
+  font-size: 8pt !important;
+}
+
+.button-container1 {
+  height: 100px;
+  background-color: lightgrey;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 32px;
+  border-radius: 20px;
+}
+
+.button-container1 button {
+  background-color: #e6e6e6;
+  height: 100%;
+  
+  border: none;
+  font-family: lato;
+  font-size: 14pt;
+  padding: 5px;
+  color: #b3b3b3;
+}
+
+.button-container1 button:hover {
+  color: var(--green);
+}
+
+#Followers {
+  border-left: solid 1px lightgrey;
+  border-right: solid 1px lightgrey;
+  width: 30%;
+}
+
+#PhotoCount {
+  border-radius: 0px 0px 0px 20px;
+	width: 70%;
+}
+
+
+.contentcontainer1 {
+  background-color: white;
+  width: 600px;
+  height: 600px;
+  margin-top: -617px;
+  margin-left: 400px;
+  border-radius: 0px 20px 20px 0px;}
+
+
+.stories {
+  width: 100%;
+  height: 90%;
+  display: flex;
+  overflow-x: auto;
+  border-bottom: solid 2px var(--green);
+  padding-bottom: 15px;
+}
+
+
+.contentcontainer1 h3 {
+  font-family: Open Sans;
+  font-size: 12.5pt;
+  color: white;
+  font-weight: 900;
+  background-color: var(--green);
+  width: 40%;
+  height: 6%;
+  border-radius: 0px 0px 15px 0px;
+  text-align: center;
+}
+
+#Photos_title{
+  margin-top: 0;
+}
+
+.story {
+  width: 300px;
+  height: 300px;
+  border-radius: 20px;
+  padding-left: 10px;
+  padding-right: 10px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.story:hover {
+  border-radius: 0px;
+  transition: ease 500ms;
+}
