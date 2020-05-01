@@ -19,9 +19,11 @@
                         <em>Submitted by: <a href="/users/<%= room.author.id %>"><%= room.author.username %></a>, <%= moment(room.createdAt).fromNow() %></em>
                     </p>
                     <% if(currentUser && room.author.id.equals(currentUser._id)){  %>
-                        <a class="btn btn-warning" href="/rooms/<%= room._id %>/edit">Edit</a>
+                        <!-- <a class="btn btn-warning" href="/rooms/<%= room._id %>/edit">Edit</a> -->
+					<div class='button1 -sun center' href="/rooms/<%= room._id %>/edit">Edit</div>
                         <form action="/rooms/<%=room._id %>?_method=DELETE" method="POST">
-                            <button class="btn btn-danger">DELETE!</button>
+                            <!-- <button class="btn btn-danger">DELETE!</button> -->
+							<div class='button1 -green center'>DELETE!</div>
                         </form>
                     <% } %>
                     
@@ -42,9 +44,10 @@
                           <%=comment.text %>
                     </p>
                     <% if(currentUser && comment.author.id.equals(currentUser._id)){  %>
-                    <a href="/rooms/<%= room._id %>/comments/<%= comment._id %>/edit" class="btn btn-warning btn-xs">Edit</a>
+                    <!-- <a href="/rooms/<%= room._id %>/comments/<%= comment._id %>/edit" class="btn btn-warning btn-xs">Edit</a> -->
+					 <div class='button1 -sun center' href="/rooms/<%= room._id %>/comments/<%= comment._id %>/edit"  >Edit Comment</div>
                         <form id="delete" action="/rooms/<%=room._id %>/comments/<%=comment._id %>?_method=DELETE" method="POST">
-                            <button class="btn btn-danger">DELETE!</button>
+                            <div class='button1 -green center'>DELETE! Comment</div>
                         </form>
                     <% } %>
                     </div>
