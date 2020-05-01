@@ -1,4 +1,4 @@
-
+<!-- 
 <% include ../partials/header %>
     <div class="row">
         <h1 style="text-align:center;">Add a New Room</h1>
@@ -8,13 +8,21 @@
                     <input class="form-control" type="text" name="name" placeholder="location">
                 </div>
                 <div class="form-group">
-                    <input class="form-control" type="number" name="price" placeholder="price" min="0.01" step="0.01">
+                    <input class="form-control" type="number" name="price" placeholder="price per month" min="0.01" step="0.01">
                 </div>
                 <div class="form-group">
                     <input class="form-control" type="text" name="image" placeholder="image url">
                 </div>
+				<div class="form-group">
+					<input type="radio" id="pgroom" name="type" value="pgroom">
+					  <label for="pgroom">PG-Room</label><br>
+					<input type="radio" id="pgtourism" name="type" value="pgtourism">
+					  <label for="pgtourism">PG-Tourism</label><br>
+					<input type="radio" id="both" name="type" value="both">
+					  <label for="both">Both</label>
+				</div>
                 <div class="form-group">
-                    <input type="text" class="form-control" name="description" placeholder="description">
+                    <input type="text" class="form-control" name="description" placeholder="If you room is of type PG-Tourism then add mention all the facilities that will be provided in your hotel. ">
                 </div>
                 <div class="form-group">
                     <button class="btn btn-lg btn-default btn-block btn-primary">Submit</button>
@@ -26,4 +34,119 @@
         
     
     </div> 
-<% include ../partials/footer %>
+<% include ../partials/footer %>-->
+ 
+
+<!DOCTYPE html>
+
+<html>
+	<head>
+		<title>Add Room</title>
+		<script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
+		<link rel="stylesheet" href="/stylesheets/newroom.css">
+      <link href="https://fonts.googleapis.com/css2?family=Balthazar&display=swap" rel="stylesheet">
+		 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	</head>
+	<body>
+		<div class="container">
+		  <header class="header">
+			<h1 id="title" class="text-center">Add Rooms</h1>
+		  </header>
+		  <form id="survey-form" action="/rooms" method="POST">
+			<div class="form-group">
+			  <label id="name-label" for="name">Location</label>
+
+			  <input
+				type="text"
+				name="name"
+				id="name"
+				class="form-control"
+				placeholder="Enter Location"
+				required
+			  />
+			</div>
+			<div class="form-group">
+			  <label id="email-label" for="price">Price</label>
+			  <input
+				type="number"
+				name="price"
+				id="email"
+				class="form-control"
+				min="0.01"
+				step="0.01"
+				placeholder="Enter the Price"
+				required
+			  />
+			</div>
+			<div class="form-group">
+			  <label id="email-label" for="image">Image</label>
+			  <input
+				type="text"
+				name="image"
+				id="email"
+				class="form-control"
+				placeholder="Enter the Image Url"
+				required
+			  />
+			</div>
+
+			<div class="form-group">
+			  <p>Room Type</p>
+			  <label>
+				<input
+				  name="type"
+				  value="pgroom"
+				  type="radio"
+				  class="input-radio"
+				  checked
+				/>PG-Room</label>
+			  <label>
+				<input
+				  name="type"
+				  value="pgtourism"
+				  type="radio"
+				  class="input-radio"
+				/>PG-Tourism</label
+			  >
+
+			  <label
+				><input
+				  name="type"
+				  value="both"
+				  type="radio"
+				  class="input-radio"
+				/>Both</label
+			  >
+			</div>
+			<div class="form-group">
+			  <p>Description. If The Room is PG-Tourism, then list all the facilities that will be provided.</p>
+			  <textarea
+				id="comments"
+				class="input-textarea"
+				name="description"
+				placeholder="Enter your Description here..."
+			  ></textarea>
+			</div>
+			<div class="separate">
+				<div class="form-group">
+				  <button type="submit" id="submit" class="submit-button">
+					<i class="fa fa-plus" aria-hidden="true"></i>
+					Add Room
+				  </button>
+				</div>
+				<div class="form-group">
+				  <button type="submit" id="submit" class="submit-button">
+					<a href="/rooms">Go Back</a>
+					  
+				  </button>
+				</div>
+			</div>
+			
+		  </form>
+		</div>
+
+	</body>
+</html>
+
+
+

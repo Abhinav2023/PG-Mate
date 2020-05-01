@@ -1,4 +1,4 @@
-<% include ./partials/header %>
+<!-- <% include ./partials/header %>
 <div class="row">
     <h1 style="text-align: center">Sign Up</h1>
     <div style="width: 30%; margin: 25px auto;">
@@ -31,4 +31,68 @@
         <a href="/rooms">Go Back</a>
     </div>
 </div>
-<% include ./partials/footer %>
+<% include ./partials/footer %> -->
+
+<!DOCTYPE html>
+<html>
+	<head>
+	  <meta charset="utf-8">
+		<title>Sign Up!</title>
+	  <meta name="viewport" content="width=device-width, initial-scale=1">
+	  <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+	  <link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet">
+	   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+		<link rel="stylesheet" href="/stylesheets/register.css">
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js" type="text/javascript" async></script>
+	  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	</head>
+	<body>
+		<div class="container">
+		  <div class="form-title">Sign up!</div>
+		  <form action="/register" method="post">
+			<div class="form-group">
+			  <label for="username">Username</label>
+			  <input type="text" name="username" class="form-control" id="email" placeholder="username" ></input>
+			</div>
+			<div class="form-group">
+				<label for="password">Password</label>
+				<input type="password" name="password" class="form-control" id="email" placeholder="password" ></input>
+			  </div>
+		<div class="form-group">
+				<label for="avatar">Profile Image Url</label>
+				<input type="text" name="avatar" class="form-control" id="email" placeholder="image url" ></input>
+			  </div>
+			<div class="form-group form-row">
+			  <div class="col">
+				<label for="firstName">First Name</label>
+				<input type="text" class="form-control" id="fname" name="firstName"></input>
+			   </div>
+			  <div class="col">
+				<label for="lastName">Last Name</label>
+				<input type="text" class="form-control" id="lname" name="lastName"></input>
+			  </div>
+			 </div>
+			<div class="form-group">
+			  <label for="email">Email</label>
+			  <input type="email" class="form-control" id="email" name="email"></input>
+			</div>
+			<div class="form-group">
+			  <label for="phoneNo">Phone Number</label>
+			  <input type="text" class="form-control" id="email" name="phoneNo"></input>
+			</div>
+			<div class="form-group">
+			  <button class="btn btn-outline-secondary signupbtn" >Sign up!</button>
+				<div class="separate">
+					<div>
+						<a href="/login">Already have an account?</a>
+					</div>
+					<div>
+						<a href="/rooms">Search Rooms</a>
+					</div>
+				</div>
+			</div>
+		  </form>
+		</div>
+	</body>
+</html>
+

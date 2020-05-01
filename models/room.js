@@ -3,6 +3,7 @@ var roomSchema=new mongoose.Schema({
     name: String,
     price: String,
     image: String,
+	type: String,
     description: String,
     createdAt: { type: Date, default: Date.now },
     author:{

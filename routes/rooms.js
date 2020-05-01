@@ -35,11 +35,12 @@ router.post("/",middlewareObj.isLoggedIn, function(req, res){
     var price = req.body.price;
     var image = req.body.image;
     var desc= req.body.description;
+	var type= req.body.type;
     var author={
         id: req.user._id,
         username: req.user.username
     }
-    var newRoom = {name: name,price: price, image: image, description: desc,author: author}
+    var newRoom = {name: name,price: price, image: image, description: desc,author: author, type: type}
     
     Room.create(newRoom, function(err, newlyCreated){
         if(err){

@@ -12,6 +12,14 @@
                 <div class="form-group">
                     <input class="form-control" type="text" name="room[image]" value="<%= room.image %>">
                 </div>
+				<div class="form-group">
+					<input type="radio" id="pgroom" name="room[type]" value="pgroom">
+					  <label for="pgroom">PG-Room</label><br>
+					<input type="radio" id="pgtourism" name="room[type]" value="pgtourism">
+					  <label for="pgtourism">PG-Tourism</label><br>
+					<input type="radio" id="both" name="room[type]" value="both">
+					  <label for="both">Both</label>
+				</div>
                 <div class="form-group">
                     <input type="text" class="form-control" name="room[description]" value="<%= room.description %>">
                 </div>

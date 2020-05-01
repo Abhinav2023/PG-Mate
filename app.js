@@ -8,15 +8,15 @@ var express          = require("express"),
     User             = require("./models/user"),
     methodOverride   = require("method-override"),
     Room       = require("./models/room"),
-    seedDB           = require("./seeds"),
     indexRoutes      = require("./routes/index"),
     roomRoutes = require("./routes/rooms"),
     commentRoutes    = require("./routes/comments"),
     flash            = require("connect-flash")
     
+
 var url=process.env.DBURL;
 mongoose.connect(url,{ useNewUrlParser: true });
-
+app.use('/admin', require('./admin'));
 app.use(bodyParser.urlencoded({extended: true}));
 app.set("view engine", "ejs");
 app.use(express.static(__dirname +"/public/"));

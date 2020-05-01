@@ -14,16 +14,29 @@
                 <div class="caption-pull">
                     <h4 class="pull-right"><strong>Rs.<%= room.price  %>/month</strong></h4>
                     <h4><a><%= room.name %></a></h4>
+					<% if(room.type==="pgroom"){ %>
+					  <h4>
+						This is room only available for PG-Room not for PG-Tourist. 
+					  </h4>
+					<% }else if(room.type==="pgtourism"){ %>
+					  <h4>
+						This is room only available for PG-Tourist not for PG-Room. 
+					  </h4>
+					<% }else { %>
+					  <h4>
+						This room available for both PG-Room and PG-Tourist. 
+					  </h4>
+					<% }; %>
                     <p> <%= room.description %></p>
                     <p>
                         <em>Submitted by: <a href="/users/<%= room.author.id %>"><%= room.author.username %></a>, <%= moment(room.createdAt).fromNow() %></em>
                     </p>
                     <% if(currentUser && room.author.id.equals(currentUser._id)){  %>
                         <!-- <a class="btn btn-warning" href="/rooms/<%= room._id %>/edit">Edit</a> -->
-					<div class='button1 -sun center' href="/rooms/<%= room._id %>/edit">Edit</div>
+					<div class='button1 -sun center'><a href="/rooms/<%= room._id %>/edit">Edit</a></div>
                         <form action="/rooms/<%=room._id %>?_method=DELETE" method="POST">
-                            <!-- <button class="btn btn-danger">DELETE!</button> -->
-							<div class='button1 -green center'>DELETE!</div>
+                            <button class="button1 -green center">DELETE!</button>
+							<!-- <div class='button1 -green center'>DELETE!</div> -->
                         </form>
                     <% } %>
                     
@@ -45,9 +58,9 @@
                     </p>
                     <% if(currentUser && comment.author.id.equals(currentUser._id)){  %>
                     <!-- <a href="/rooms/<%= room._id %>/comments/<%= comment._id %>/edit" class="btn btn-warning btn-xs">Edit</a> -->
-					 <div class='button1 -sun center' href="/rooms/<%= room._id %>/comments/<%= comment._id %>/edit"  >Edit Comment</div>
+					 <div class='button1 -sun center' ><a href="/rooms/<%= room._id %>/comments/<%= comment._id %>/edit" >Edit </a></div>
                         <form id="delete" action="/rooms/<%=room._id %>/comments/<%=comment._id %>?_method=DELETE" method="POST">
-                            <div class='button1 -green center'>DELETE! Comment</div>
+							<button class="button1 -green center">DELETE!</button>
                         </form>
                     <% } %>
                     </div>
