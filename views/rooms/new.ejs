@@ -35,20 +35,13 @@
     
     </div> 
 <% include ../partials/footer %>-->
- 
+ <% include ../partials/header %>
 
-<!DOCTYPE html>
-
-<html>
-	<head>
-		<title>Add Room</title>
 		<script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
 		<link rel="stylesheet" href="/stylesheets/newroom.css">
       <link href="https://fonts.googleapis.com/css2?family=Balthazar&display=swap" rel="stylesheet">
 		 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-	</head>
-	<body>
-		<div class="container">
+		<div class="container1">
 		  <header class="header">
 			<h1 id="title" class="text-center">Add Rooms</h1>
 		  </header>
@@ -118,7 +111,7 @@
 				/>Both</label
 			  >
 			</div>
-			<div class="form-group">
+			<!-- <div class="form-group">
 			  <p>Description. If The Room is PG-Tourism, then list all the facilities that will be provided.</p>
 			  <textarea
 				id="comments"
@@ -126,7 +119,11 @@
 				name="description"
 				placeholder="Enter your Description here..."
 			  ></textarea>
-			</div>
+			</div> -->
+			  <div class="form-group">
+				  <p>Description. If The Room is PG-Tourism, then list all the facilities that will be provided.</p>
+                    <input type="text" class="form-control" name="description" placeholder="Enter description ">
+                </div>
 			<div class="separate">
 				<div class="form-group">
 				  <button type="submit" id="submit" class="submit-button">
@@ -144,9 +141,7 @@
 			
 		  </form>
 		</div>
-
-	</body>
-</html>
+<% include ../partials/footer %>
 
 
 

@@ -11,6 +11,7 @@ var UserSchema= new mongoose.Schema({
 	phoneNo: {type: String, unique: true, required: true},
     resetPasswordToken: String,
     resetPasswordExpires: Date,
+	isAdmin: { type: Boolean, default: false }
 })
 
 UserSchema.plugin(passportLocalMongoose)
