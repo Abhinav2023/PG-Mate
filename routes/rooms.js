@@ -9,7 +9,7 @@ router.get("/", (req, res) => {
   let noMatch = null;
   if (req.query.search) {
     const regex = new RegExp(escapeRegex(req.query.search), 'gi');
-    Room.find({name: regex}, function(err, allRooms) {
+    Room.find({address: regex}, function(err, allRooms) {
       if (err) { console.log(err); }
       else {
         if (allRooms.length < 1) {
@@ -34,13 +34,14 @@ router.post("/",middlewareObj.isLoggedIn, function(req, res){
     var name = req.body.name;
     var price = req.body.price;
     var image = req.body.image;
+	var address=req.body.address;
     var desc= req.body.description;
 	var type= req.body.type;
     var author={
         id: req.user._id,
         username: req.user.username
     }
-    var newRoom = {name: name,price: price, image: image, description: desc,author: author, type: type}
+    var newRoom = {name: name,price: price,address: address, image: image, description: desc,author: author, type: type}
     
     Room.create(newRoom, function(err, newlyCreated){
         if(err){

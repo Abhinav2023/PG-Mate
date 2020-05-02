@@ -2,6 +2,7 @@ var mongoose=require("mongoose")
 var roomSchema=new mongoose.Schema({
     name: String,
     price: String,
+	address: String,
     image: String,
 	type: String,
     description: String,

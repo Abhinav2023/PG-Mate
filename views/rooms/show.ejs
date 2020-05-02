@@ -3,33 +3,41 @@
         <div class="col-md-3">
             <p class="lead"> PG-Mate</p>
             <div class="list-group">
-                <li class="list-group-item active">Info 1</li>
-                <li class="list-group-item">Info 2</li>
-                <li class="list-group-item">Info 3</li>
+				<li style="list-style: none; margin-bottom: 5px">
+					<span class="price-tag">
+					  <span style="font-size: 20px"><strong>Owner: <%= room.author.username  %></strong></span>
+					</span>
+				</li>
+				<li style="list-style: none">
+					<span class="price-tag">
+					  <span style="font-size: 20px"><strong>Rs.  <%= room.price  %>/month</strong></span>
+					</span>
+				</li>
             </div>
         </div>
         <div class="col-md-9">
             <div class="thumbnail">
                 <img class="img-responsive" src="<%= room.image %>">
                 <div class="caption-pull">
-                    <h4 class="pull-right"><strong>Rs.<%= room.price  %>/month</strong></h4>
-                    <h4><a><%= room.name %></a></h4>
+                    <!-- <h4 class="pull-right"><strong>Rs.<%= room.price  %>/month</strong></h4> -->
+                    <!-- <h3><a><%= room.name %></a></h3> -->
+					<h4><a><%= room.address %></a></h4>
 					<% if(room.type==="pgroom"){ %>
 					  <h4>
-						This is room only available for PG-Room not for PG-Tourist. 
+						PG-Room 
 					  </h4>
 					<% }else if(room.type==="pgtourism"){ %>
 					  <h4>
-						This is room only available for PG-Tourist not for PG-Room. 
+						PG-Tourist  
 					  </h4>
 					<% }else { %>
 					  <h4>
-						This room available for both PG-Room and PG-Tourist. 
+						Both PG-Room and PG-Tourist. 
 					  </h4>
 					<% }; %>
                     <p> <%= room.description %></p>
                     <p>
-                        <em>Submitted by: <a href="/users/<%= room.author.id %>"><%= room.author.username %></a>, <%= moment(room.createdAt).fromNow() %></em>
+                        <em>Contact to <a href="/users/<%= room.author.id %>"><%= room.author.username %></a> for Booking.</em>
                     </p>
                     <% if(currentUser && room.author.id.equals(currentUser._id) || currentUser && currentUser.isAdmin){  %>
                         <!-- <a class="btn btn-warning" href="/rooms/<%= room._id %>/edit">Edit</a> -->

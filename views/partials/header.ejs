@@ -7,6 +7,8 @@
 		<link rel="icon" href="https://res.cloudinary.com/djcgm2m7l/image/upload/v1588318181/pg-icon-3_cshswo.png" />
             <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
             <link rel="stylesheet" href="/stylesheets/main.css">
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js" type="text/javascript" async>
+			</script>
     </head>
     <body>
     <nav class="navbar navbar-default">
@@ -24,7 +26,7 @@
         <div id="navbar" class="collapse navbar-collapse">
           <ul class="nav navbar-nav">
             <li class="<%= typeof page !== 'undefined' && page === 'rooms' ? 'active' : '' %>"><a href="/rooms">Home</a></li>
-			<li class="<%= typeof page !=='undefined' && page ==='learnmore' ? 'active' : ''%>" ><a href="/learnmore">Learn More</a></li>
+			<li class="<%= typeof page !=='undefined' && page ==='learnmore' ? 'active' : ''%>" ><a href="/learnmore">How To Apply</a></li>
           </ul>
           <ul class="nav navbar-nav navbar-right">
               <% if(!currentUser){ %>
