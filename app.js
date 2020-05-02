@@ -13,9 +13,6 @@ var express          = require("express"),
     commentRoutes    = require("./routes/comments"),
     flash            = require("connect-flash")
 
-
-    
-
 var url=process.env.DBURL;
 mongoose.connect(url,{ useNewUrlParser: true });
 app.use('/admin', require('./admin'));
