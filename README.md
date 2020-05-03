@@ -57,7 +57,7 @@ To see the app in action, go to [https://pg-mate.herokuapp.com//](https://pg-mat
  
 ## Getting Started
 
-> This app contains API secrets and passwords that have been hidden deliberately, so the app cannot be run with its features on your local machine.
+> This app contains API secrets and passwords that have been hidden deliberately, so the app cannot be run with its features on your local machine.For this has to be run you must have nodejs enviornment setup already and also for database we are using MongoDB so, you must have to install mongoDB setup.
 
 
 ### Install dependencies
@@ -72,6 +72,26 @@ or
 yarn install
 ```
 
+### Other Pre-Setup to run code
+
+* For this you have to setup some enviornment varibles as :-
+
+ PORT - 3000(you can use any)
+ 
+ DBURL- your mongoDB url or mongo Atlas's cluster url
+ 
+ GMAILID- Your GmailId for automatically sending email to user when forgot password is used.
+ 
+ GMAILPWD- Your Gmail Password.
+ 
+ ADMINCODE- Admin Code for Admin SignUp.
+ 
+ * After this, run
+ 
+ ```sh
+node app.js       Or       nodemon app.js
+```
+ 
 ### Comments in code
 
 Some comments in the source code are course notes and therefore might not seem necessary from a developer's point of view.
@@ -104,7 +124,5 @@ Some comments in the source code are course notes and therefore might not seem n
 ### Platforms
 
 * [Cloudinary](https://cloudinary.com/)
+* [Goorm IDE](https://ide.goorm.io/)
 * [Heroku](https://www.heroku.com/)
-## License
-
-#### [MIT](./LICENSE)
