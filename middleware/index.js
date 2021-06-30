@@ -21,7 +21,7 @@ middlewareObj.roomLoggedIn=function (req,res,next){
         }
     })}
     else{
-        req.flash("error","You Need To Be Logged In")
+        req.flash("error","Get ready to be Logged In")
         res.redirect("back")
     }
 }
